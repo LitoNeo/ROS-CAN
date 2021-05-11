@@ -1,0 +1,11 @@
+<launch>
+
+    <node pkg="can_module_usb2can" name="can_module_CANalyst_node" type="can_module_CANalyst_node" output="screen">
+        <param name="main_can_id" type="int" value="2" />         <!--1:CAN1 2:CAN2  -->
+
+        <param name="debug_mode" type="bool" value="false" />
+        <param name="debug_can_id" type="int" value="1" />
+        <param name="show_sending_msg" type="bool" value="false" />
+    </node>
+
+</launch>
