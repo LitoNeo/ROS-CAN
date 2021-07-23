@@ -29,7 +29,7 @@ echo  'ATTRS{idVendor}=="04d8", ATTRS{idProduct}=="0053", MODE:="0666", GROUP:="
   或者：修改<node>中的端口名称为/dev/usb2can_alystii
 5. 使用ls /dev/usb2can_alystii来查看是否成功
 
-**TODO::研究udev规则机制**
+**TODO::udev规则机制**
 
 ## 4. USB2CAN_alystii驱动主要接口函数说明
 
@@ -48,13 +48,5 @@ echo  'ATTRS{idVendor}=="04d8", ATTRS{idProduct}=="0053", MODE:="0666", GROUP:="
 | can_msgs::battery | "/battery" |
 
 ## TODO List
- - [] 前轮转角的计算,前期沟通,大车数据±85对应实际±27°
-    - [] 前面car_ros在使用的时候,设置的时候都×10处理了,获得数据也除以10,因此考虑计算出来的数据在0-850之间
-    - [] 需要确认通信协议是否改过,叶说现在的前轮转角为带角度值
-    - [] 向车辆输入转向数据时,应该应该同样修改?
-
-
-20200922:
-  发送给云乐can的数值范围为±600, 对应实际角度±30°  --注:这是实测值,与云乐给的协议值不一致
-  usb2can接收的角度值直接为实际的角度即可,即ecu_msg.steer = [-30, +30]
+ - [] 确定不同车型前轮转角参数和实际转角度数之间的关系。
 
